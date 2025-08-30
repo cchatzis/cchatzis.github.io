@@ -23,7 +23,7 @@
     --color-special: #ea580c;
     
     /* Sophisticated Typography Scale */
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --font-sans: 'Ubuntu', sans-serif, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
     
     /* Fluid Type Scale */
