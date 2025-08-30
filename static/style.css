@@ -97,7 +97,7 @@ html {
 
 body {
     margin: 0;
-    font-family: var(--font-sans);
+    font-family: 'Ubuntu', sans-serif;
     font-size: var(--text-base);
     line-height: 1.6;
     color: var(--color-text);
@@ -1461,7 +1461,7 @@ blockquote {
     margin-left: 2rem;
     border-left: none;
     background: transparent;
-    font-family: var(--font-sans);
+    font-family: 'Ubuntu', sans-serif;
     font-style: italic;
     font-size: var(--text-lg);
     line-height: 1.7;
@@ -1473,7 +1473,7 @@ blockquote::before {
     position: absolute;
     left: -2rem;
     top: 0;
-    font-family: "Playfair Display", serif;
+    font-family: 'Ubuntu', sans-serif;
     font-size: 6rem;
     line-height: 0.8;
     font-weight: 400;
