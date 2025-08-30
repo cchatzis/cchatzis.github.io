@@ -12,4 +12,10 @@
     <priority>0.8</priority>
     <lastmod>2025-08-30</lastmod>
   </url>
+  <url>
+    <loc>https://cchatzis.github.io/talks.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-08-30</lastmod>
+  </url>
 </urlset>
