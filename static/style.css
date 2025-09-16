@@ -1521,3 +1521,20 @@ blockquote::before {
         font-size: 4rem;
     }
 }
+
+.social-links {
+  display: flex;
+  gap: 1.5rem;              /* space between icons */
+  justify-content: center;  /* center align */
+  margin-top: 1.5rem;
+}
+
+.social-links a {
+  color: #6c757d;           /* default gray */
+  font-size: 1.8rem;        /* icon size */
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #059669;           /* dark on hover */
+}
