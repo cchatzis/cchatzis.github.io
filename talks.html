@@ -12,12 +12,12 @@
 <meta property="og:description" content="Personal academic website">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cchatzis.github.io/talks.html">
-<meta property="og:image" content="https://cchatzis.github.io/static/profile.jpg">
+<meta property="og:image" content="https://cchatzis.github.io/static/prof2.jpg">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Talks">
 <meta name="twitter:description" content="Personal academic website">
-<meta name="twitter:image" content="https://cchatzis.github.io/static/profile.jpg">
+<meta name="twitter:image" content="https://cchatzis.github.io/static/prof2.jpg">
 
 <link rel="canonical" href="https://cchatzis.github.io/talks.html">
 
@@ -52,6 +52,7 @@ MathJax = {
         <ul class="nav-links">
             <li><a href="publications.html" class="nav-link ">Publications</a></li>
             <li><a href="talks.html" class="nav-link active">Talks</a></li>
+            <li><a href="news.html" class="nav-link ">News</a></li>
         </ul>
     </nav>
 </header>    
@@ -65,22 +66,31 @@ MathJax = {
     <div class="list-container">
         <article class="card talk-card reveal-on-scroll">
     <h3 class="card-title">
-        Your Talk Title
-<span class="talk-type">Keynote</span>    </h3>
+        Uncovering evolving patterns in temporal data with tensor decompositions
+<span class="talk-type">Invited talk</span>    </h3>
     <p class="card-meta">
-<time>Month YYYY</time> · <span class="talk-venue">Conference/Workshop Name</span>    </p>
-    <div class="card-content"><p>Brief description of your talk.</p></div>
+<time>June 2025</time> · <span class="talk-venue">TRICAP (Three-way Methods in Chemistry and Psychology) 2025</span>    </p>
+    <div class="card-content"><p>In this talk, we discuss why existing works might  be unsuitable for the task of analyzing time-evolving data and introduce two time-aware methods: t(emporal)PARAFAC and d(ynamical)CMF. With extensive synthetic experiments we compare these methods with the state-of-the-art for the task of uncovering evolving patterns in terms of accuracy, while also highlighting the benefits and limitations with respect to the three essential requirements of analyzing temporal data: (a) time-awareness, (b) structural flexibility, and (c) uniqueness.<br><br>This is joint work with Carla Schenker, Max Pfeffer, Pedro Lind, Jérémy E. Cohen and Evrim Acar.</p></div>
     <div class="card-links">
-<a href="talks/keynote_slides.pdf" target="_blank" rel="noopener" class="card-link">Slides</a><a href="https://youtube.com/watch?v=example" target="_blank" rel="noopener" class="card-link">Video</a><a href="https://github.com/username/talk-code" target="_blank" rel="noopener" class="card-link">Code</a><a href="talks/abstract.pdf" target="_blank" rel="noopener" class="card-link">Materials</a>    </div>
+    </div>
 </article><article class="card talk-card reveal-on-scroll">
     <h3 class="card-title">
-        Another Talk
+        dCMF: Learning interpretable evolving patterns from temporal multiway data
+<span class="talk-type">Contributed talk</span>    </h3>
+    <p class="card-meta">
+<time>May 2025</time> · <span class="talk-venue">Particles, Fluids and Patterns: Analytical and Computational Challenges (Intensive trimester organised by Gran Sasso Science Institute)</span>    </p>
+    <div class="card-content"><p>In this work, we bridge the gap between tensor factorizations and dynamical modeling and propose d(ynamical)CMF. dCMF constrains the temporal evolution of the latent factors to adhere to a specific LDS structure, thus taking into account the order of the observations. We explore how the proposed method is related to CP, PARAFAC2 and t(emporal)PARAFAC2. We highlight also the fact that if an estimate of the transition matrix is known a-priori, the framework allows for promoting this specific structure on the evolving factors.<br><br>This is joint work with Carla Schenker, Jérémy E. Cohen and Evrim Acar.</p></div>
+    <div class="card-links">
+<a href="static/talks/gssi_slides.pdf" target="_blank" rel="noopener" class="card-link">Abstract</a>    </div>
+</article><article class="card talk-card reveal-on-scroll">
+    <h3 class="card-title">
+        A Time-aware tensor decomposition for concept evolution
 <span class="talk-type">Invited Talk</span>    </h3>
     <p class="card-meta">
-<time>Earlier Month YYYY</time> · <span class="talk-venue">Workshop Name</span>    </p>
-    <div class="card-content"><p>Description of another presentation.</p></div>
+<time>March 2024</time> · <span class="talk-venue">94th Annual meeting of the International Association of Applied Mathematics and Mechanics (GAMM 2024)</span>    </p>
+    <div class="card-content"><p>In this talk, we introduce the temporal PARAFAC2 (tPARAFAC2) model, a PARAFAC2-based tensor factorization with temporal regularization to compute a time-aware factorization of the input with the goal of extracting gradually evolving patterns, which is essential for understanding the data’s continuous development through the underlying temporal dynamics. We use an Alternating Optimization (AO) - Alternating Direction Method of Multipliers (ADMM)-based algorithm to fit the model and study different algorithmic approaches to handle missing data when fitting the model. Using numerical experiments on simulated and real data, we demonstrate the effectiveness of tPARAFAC2 model in terms of recovering the underlying (evolving) patterns accurately in various challenging cases, in particular, in the presence of missing entries.<br><br>This is joint work with Max Pfeffer, Pedro Lind and Evrim Acar.</p></div>
     <div class="card-links">
-<a href="https://speakerdeck.com/username/slides" target="_blank" rel="noopener" class="card-link">Slides</a><a href="demos/interactive_demo.html" target="_blank" rel="noopener" class="card-link">Demo</a>    </div>
+    </div>
 </article>
     </div>
 </div>

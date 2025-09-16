@@ -23,7 +23,7 @@
     --color-special: #ea580c;
     
     /* Sophisticated Typography Scale */
-    --font-sans: 'Ubuntu', sans-serif, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    --font-sans: 'Ubuntu', sans-serif;
     --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
     
     /* Fluid Type Scale */
@@ -1473,7 +1473,7 @@ blockquote::before {
     position: absolute;
     left: -2rem;
     top: 0;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Playfair Display", serif;
     font-size: 6rem;
     line-height: 0.8;
     font-weight: 400;

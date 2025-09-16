@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Academic Website · Christos Chatzis</title>
+    <title>Christos Chatzis · Christos Chatzis</title>
     <meta name="description" content="Personal academic website">
 
 <meta name="author" content="Christos Chatzis">
 
-<meta property="og:title" content="Your Name - Academic Website">
+<meta property="og:title" content="Christos Chatzis">
 <meta property="og:description" content="Personal academic website">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cchatzis.github.io/index.html">
-<meta property="og:image" content="https://cchatzis.github.io/static/profile.jpg">
+<meta property="og:image" content="https://cchatzis.github.io/static/prof2.jpg">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Your Name - Academic Website">
+<meta name="twitter:title" content="Christos Chatzis">
 <meta name="twitter:description" content="Personal academic website">
-<meta name="twitter:image" content="https://cchatzis.github.io/static/profile.jpg">
+<meta name="twitter:image" content="https://cchatzis.github.io/static/prof2.jpg">
 
 <link rel="canonical" href="https://cchatzis.github.io/index.html">
 
@@ -29,16 +29,22 @@
   "url": "https://cchatzis.github.io",
   "jobTitle": "PhD student",
   "description": "Personal academic website",
-  "image": "https://cchatzis.github.io/static/profile.jpg",
+  "image": "https://cchatzis.github.io/static/prof2.jpg",
   "affiliation": {
     "@type": "Organization",
     "name": "Simula Metropolitan & Oslo Metropolitan university"
   },
+  "sameAs": [
+    "https://github.com/cchatzis",
+    "https://scholar.google.com/citations?user=eE-1KN0AAAAJ&hl=en",
+    "https://www.linkedin.com/in/cchatzis/"
+  ],
   "email": "christos@simula.no",
   "knowsAbout": [
-    "Research Area 1",
-    "Research Area 2",
-    "Research Area 3"
+    "Tensor factorizations",
+    "Data Mining",
+    "Unsupervised Learning",
+    "Scientific Computing"
   ],
   "worksFor": {
     "@type": "Organization",
@@ -67,8 +73,7 @@ MathJax = {
     <link rel="stylesheet" href="static/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"> -->
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -78,6 +83,7 @@ MathJax = {
         <ul class="nav-links">
             <li><a href="publications.html" class="nav-link ">Publications</a></li>
             <li><a href="talks.html" class="nav-link ">Talks</a></li>
+            <li><a href="news.html" class="nav-link ">News</a></li>
         </ul>
     </nav>
 </header>    
@@ -87,13 +93,14 @@ MathJax = {
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Christos Chatzis</h1>
-<p class="hero-tagline">Your research tagline or mission statement</p>                <div class="hero-actions">
+<p class="hero-tagline">Uncovering structure in high-dimensional 
+and dynamic datasets.</p>                <div class="hero-actions">
                     <a href="publications.html" class="primary-button">View Publications</a>
                     <a href="mailto:christos@simula.no" class="secondary-button">Get in Touch</a>
                 </div>
             </div>
             <div class="hero-photo">
-                <img src="static/profile.jpg" alt="Christos Chatzis" class="photo">
+                <img src="static/prof2.jpg" alt="Christos Chatzis" class="photo">
             </div>
         </div>
     </div>
@@ -102,14 +109,21 @@ MathJax = {
     <div class="container">
         <h2>About Me</h2>
         <div class="bio-content">
-            {{ bio_content }}
+            <!-- Your bio here. Write about your research, background, and interests. -->
+<p>I am currently a PhD student at Simula Metropolitan Center for Digital Engineering (SimulaMet) studying matrix and tensor factorizations, specifically for temporal data.</p>
+<p>My background is on <strong>computer science</strong>, specializing in <strong>data mining</strong> and <strong>scientific computing</strong>. I am especially intrigued by <strong>unsupervised machine learning</strong> due to its capacity to discover patterns that are not predefined and relationships we did not even know to look for.</p>
+<h3>Education</h3>
+<p><strong>Present</strong> - Ph.D. in Engineering Science, Simula Metropolitan Center for Digital Engineering<br />
+<strong>2022</strong> - M.Sc. in Computer Science, National and Kapodistrian University of Athens<br />
+<strong>2020</strong> - B.Sc. in Informatics &amp; Telecommunications, National and Kapodistrian University of Athens</p>
         </div>
         <div class="interests-section">
             <h3>Research Interests</h3>
             <div class="interests-list">
-                <span class="interest-tag">Research Area 1</span>
-                <span class="interest-tag">Research Area 2</span>
-                <span class="interest-tag">Research Area 3</span>
+                <span class="interest-tag">Tensor factorizations</span>
+                <span class="interest-tag">Data Mining</span>
+                <span class="interest-tag">Unsupervised Learning</span>
+                <span class="interest-tag">Scientific Computing</span>
             </div>
         </div>
     </div>
@@ -124,18 +138,18 @@ MathJax = {
         </header>
         <div class="list-container">
 <article class="card publication-card reveal-on-scroll">
-    <h3 class="card-title">tPARAFAC2: Tracking evolving patterns in (incomplete) temporal data</h3>
-    <p class="card-meta pub-authors">['Christos Chatzis', 'Carla Schenker', 'Max Pfeffer', 'Evrim Acar']</p>
-    <p class="card-meta pub-venue">Publication, 2025</p>
+    <h3 class="card-title">tPARAFAC2: tracking evolving patterns in (incomplete) temporal data</h3>
+    <p class="card-meta pub-authors">Christos Chatzis, Carla Schenker, Max Pfeffer, Evrim Acar</p>
+    <p class="card-meta pub-venue">Data Mining and Knowledge Discovery, 2025</p>
     <div class="card-links">
-        <a href="https://arxiv.org/abs/2407.01356" class="pub-link">Paper</a>
-        <button class="cite-button" onclick="copyBibtex(this)" data-bibtex="@misc{chatzis2025tparafac2trackingevolvingpatterns,
- archiveprefix = {arXiv},
+        <a href="https://doi.org/10.1007/s10618-025-01122-6" class="pub-link">Paper</a>
+        <button class="cite-button" onclick="copyBibtex(this)" data-bibtex="@article{Chatzis2025,
  author = {Christos Chatzis and Carla Schenker and Max Pfeffer and Evrim Acar},
- eprint = {2407.01356},
- primaryclass = {cs.LG},
- title = {tPARAFAC2: Tracking evolving patterns in (incomplete) temporal data},
- url = {https://arxiv.org/abs/2407.01356},
+ doi = {10.1007/s10618-025-01122-6},
+ journal = {Data Mining and Knowledge Discovery},
+ number = {6},
+ title = {tPARAFAC2: tracking evolving patterns in (incomplete) temporal data},
+ volume = {39},
  year = {2025}
 }">
             <i class="fas fa-quote-left"></i> Cite
@@ -143,13 +157,14 @@ MathJax = {
     </div>
 </article><article class="card publication-card reveal-on-scroll">
     <h3 class="card-title">dCMF: Learning interpretable evolving patterns from temporal multiway data</h3>
-    <p class="card-meta pub-authors">['Christos Chatzis', 'Carla Schenker', 'Jérémy E. Cohen', 'Evrim Acar']</p>
-    <p class="card-meta pub-venue">Publication, 2025</p>
+    <p class="card-meta pub-authors">Christos Chatzis, Carla Schenker, Jérémy E. Cohen, Evrim Acar</p>
+    <p class="card-meta pub-venue">arXiv preprints, 2025</p>
     <div class="card-links">
         <a href="https://arxiv.org/abs/2502.19367" class="pub-link">Paper</a>
-        <button class="cite-button" onclick="copyBibtex(this)" data-bibtex="@misc{chatzis2025dcmflearninginterpretableevolving,
+        <button class="cite-button" onclick="copyBibtex(this)" data-bibtex="@inproceedings{chatzis2025dcmflearninginterpretableevolving,
  archiveprefix = {arXiv},
  author = {Christos Chatzis and Carla Schenker and Jérémy E. Cohen and Evrim Acar},
+ booktitle = {arXiv preprints},
  eprint = {2502.19367},
  primaryclass = {cs.LG},
  title = {dCMF: Learning interpretable evolving patterns from temporal multiway data},
@@ -161,7 +176,7 @@ MathJax = {
     </div>
 </article><article class="card publication-card reveal-on-scroll">
     <h3 class="card-title">A Time-Aware Tensor Decomposition for Tracking Evolving Patterns</h3>
-    <p class="card-meta pub-authors"><b>Christos Chatzis</b>, Max Pfeffer, Pedro Lind and Evrim Acar</p>
+    <p class="card-meta pub-authors">Christos Chatzis, Max Pfeffer, Pedro Lind, Evrim Acar</p>
     <p class="card-meta pub-venue">2023 IEEE 33rd International Workshop on Machine Learning for Signal Processing (MLSP), 2023</p>
     <div class="card-links">
         <a href="https://doi.org/10.1109/MLSP55844.2023.10285943" class="pub-link">Paper</a>
@@ -182,6 +197,40 @@ MathJax = {
 </article>        </div>
         <div class="section-footer">
             <a href="publications.html" class="view-all-link">View all publications →</a>
+        </div>
+    </div>
+</section>
+        <div class="divider"></div>
+    <section class="content-section">
+    <div class="container">
+        <header class="section-header">
+            <h2>Recent News</h2>
+        </header>
+        <div class="timeline-container">
+<article class="news-item reveal-on-scroll">
+    <time class="news-date">September 2025</time>
+    <div class="news-content">
+        <p>Our work <em>tPARAFAC2: Tracking evolving patterns in (incomplete) temporal data</em> is now published!</p>
+    <div class="news-links">
+<a href="https://link.springer.com/article/10.1007/s10618-025-01122-6" target="_blank" rel="noopener" class="news-link">Paper</a>    </div>
+    </div>
+</article><article class="news-item reveal-on-scroll">
+    <time class="news-date">September 2025</time>
+    <div class="news-content">
+        <p>Our work <em>dCMF: Learning interpretable evolving patterns from temporal multiway data</em> is now published!</p>
+    <div class="news-links">
+<a href="https://eusipco2025.org/wp-content/uploads/pdfs/0002122.pdf" target="_blank" rel="noopener" class="news-link">Paper</a>    </div>
+    </div>
+</article><article class="news-item reveal-on-scroll">
+    <time class="news-date">June 2025</time>
+    <div class="news-content">
+        <p>I presented at my talk <em>Uncovering evolving patterns in temporal data with tensor decompositions</em> at <em>TRICAP (Three-way Methods in Chemistry and Psychology) 2025</em> workshop at Ålesund, Norway.</p>
+    <div class="news-links">
+    </div>
+    </div>
+</article>        </div>
+        <div class="section-footer">
+            <a href="news.html" class="view-all-link">View all news →</a>
         </div>
     </div>
 </section>

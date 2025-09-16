@@ -4,18 +4,24 @@
     <loc>https://cchatzis.github.io/index.html</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <lastmod>2025-08-30</lastmod>
+    <lastmod>2025-09-16</lastmod>
   </url>
   <url>
     <loc>https://cchatzis.github.io/publications.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
-    <lastmod>2025-08-30</lastmod>
+    <lastmod>2025-09-16</lastmod>
   </url>
   <url>
     <loc>https://cchatzis.github.io/talks.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <lastmod>2025-08-30</lastmod>
+    <lastmod>2025-09-16</lastmod>
+  </url>
+  <url>
+    <loc>https://cchatzis.github.io/news.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <lastmod>2025-09-16</lastmod>
   </url>
 </urlset>
