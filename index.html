@@ -1,249 +1,320 @@
 <!DOCTYPE html>
+<!--
+    Plain-Academic by Vasilios Mavroudis
+    Released under the Simplified BSD License/FreeBSD (2-clause) License.
+    https://github.com/mavroudisv/plain-academic
+-->
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christos Chatzis</title>
-    <meta name="description" content="Personal academic website">
-
-<meta name="author" content="Christos Chatzis">
-
-<link rel="icon" type="image/svg+xml" href="static/favicon.svg">
-<meta property="og:title" content="Christos Chatzis">
-<meta property="og:description" content="Personal academic website">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://cchatzis.github.io/index.html">
-<meta property="og:image" content="https://cchatzis.github.io/static/prof2.jpg">
-
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Christos Chatzis">
-<meta name="twitter:description" content="Personal academic website">
-<meta name="twitter:image" content="https://cchatzis.github.io/static/prof2.jpg">
-
-<link rel="canonical" href="https://cchatzis.github.io/index.html">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Christos Chatzis",
-  "url": "https://cchatzis.github.io",
-  "jobTitle": "PhD student",
-  "description": "Personal academic website",
-  "image": "https://cchatzis.github.io/static/prof2.jpg",
-  "affiliation": {
-    "@type": "Organization",
-    "name": "Simula Metropolitan & Oslo Metropolitan university"
-  },
-  "sameAs": [
-    "https://github.com/cchatzis",
-    "https://scholar.google.com/citations?user=eE-1KN0AAAAJ&hl=en",
-    "https://www.linkedin.com/in/cchatzis/"
-  ],
-  "email": "christos@simula.no",
-  "knowsAbout": [
-    "Tensor factorizations",
-    "Data Mining",
-    "Unsupervised Learning",
-    "Scientific Computing"
-  ],
-  "worksFor": {
-    "@type": "Organization",
-    "name": "Simula Metropolitan & Oslo Metropolitan university"
-  }
-}
-</script>
-
-<script>
-MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']],
-    displayMath: [['$$', '$$'], ['\\[', '\\]']],
-    processEscapes: true,
-    processEnvironments: true
-  },
-  options: {
-    ignoreHtmlClass: 'tex2jax_ignore',
-    processHtmlClass: 'tex2jax_process'
-  }
-};
-</script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-    <link rel="stylesheet" href="https://cchatzis.github.io/static/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Christos Chatzis</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap' rel='stylesheet'>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Ubuntu', sans-serif; background-color: #f0f2f5; font-size: 14.5px; }
+    .section-box {
+      border: 1px solid #dde3ea;
+      border-radius: 8px;
+      padding: 8px 20px 16px 20px;
+      margin-bottom: 24px;
+      background: #fff;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+    .pub-entry {
+      border-left: 3px solid #c8d0d9;
+      background: #f8f9fa;
+      border-radius: 0 6px 6px 0;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+    }
+    .pub-btn {
+      display: inline-block;
+      padding: 2px 10px;
+      font-size: 12px;
+      line-height: 1.5;
+      border-radius: 3px;
+      border: 1px solid #ccc;
+      background: #fff;
+      color: #555;
+      cursor: pointer;
+      text-decoration: none;
+      margin-right: 4px;
+      font-family: 'Ubuntu', sans-serif;
+    }
+    .pub-btn:hover { background: #e8e8e8; color: #333; text-decoration: none; }
+    details.pub-cite { display: inline-block; vertical-align: top; }
+    details.pub-cite > summary { list-style: none; }
+    details.pub-cite > summary::-webkit-details-marker { display: none; }
+    details.pub-cite pre {
+      margin-top: 8px;
+      font-size: 11px;
+      background: #fff;
+      border: 1px solid #dde3ea;
+      border-radius: 4px;
+      padding: 10px;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+    .pub-arrow {
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+    .pub-arrow.open { transform: rotate(180deg); }
+    .service-entry {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 6px;
+      align-items: baseline;
+    }
+    .service-date {
+      min-width: 130px;
+      color: #888;
+      font-size: 0.9em;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .service-subsection { margin-bottom: 14px; }
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="alternate icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
-<header class="site-header">
-    <nav class="nav-container">
-        <a href="https://cchatzis.github.io/index.html" class="nav-home">Christos Chatzis</a>
-        <ul class="nav-links">
-            <li><a href="https://cchatzis.github.io/publications.html" class="nav-link ">Publications</a></li>
-            <li><a href="https://cchatzis.github.io/talks.html" class="nav-link ">Talks</a></li>
-            <li><a href="https://cchatzis.github.io/news.html" class="nav-link ">News</a></li>
-        </ul>
-    </nav>
-</header>    
-    <main>
-        <section class="hero-section">
-    <div class="container">
-        <div class="hero-content">
-            <div class="hero-text">
-                <h1>Christos Chatzis</h1>
-<p class="hero-tagline">Uncovering structure in high-dimensional 
-and dynamic datasets.</p>                <div class="hero-actions">
-                    <a href="publications.html" class="primary-button">View Publications</a>
-                    <a href="mailto:christos@simula.no" class="secondary-button">Get in Touch</a>
-                </div>
-            </div>
-            <div class="hero-photo">
-                <img src="static/prof2.jpg" alt="Christos Chatzis" class="photo">
-            </div>
-        </div>
-        <div class="social-links">
-            <a href="https://github.com/cchatzis" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://scholar.google.com/citations?user=eE-1KN0AAAAJ&hl=en" target="_blank"><i class="fas fa-graduation-cap"></i></a>
-            <a href="https://www.linkedin.com/in/cchatzis/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </div>
-</section>
-<section class="bio-section">
-    <div class="container">
-        <h2>About Me</h2>
-        <div class="bio-content">
-            <!-- Your bio here. Write about your research, background, and interests. -->
-<p>I am currently a PhD student at Simula Metropolitan Center for Digital Engineering (SimulaMet) studying matrix and tensor factorizations, specifically for temporal data.</p>
-<p>My background is on <strong>computer science</strong>, specializing in <strong>data mining</strong> and <strong>scientific computing</strong>. I am especially intrigued by <strong>unsupervised machine learning</strong> due to its capacity to discover patterns that are not predefined and relationships we did not even know to look for.</p>
-<h3>Education</h3>
-<p><strong>Present</strong> - Ph.D. in Engineering Science, Simula Metropolitan Center for Digital Engineering<br />
-<strong>2022</strong> - M.Sc. in Computer Science, National and Kapodistrian University of Athens<br />
-<strong>2020</strong> - B.Sc. in Informatics &amp; Telecommunications, National and Kapodistrian University of Athens</p>
-        </div>
-        <div class="interests-section">
-            <h3>Research Interests</h3>
-            <div class="interests-list">
-                <span class="interest-tag">Tensor factorizations</span>
-                <span class="interest-tag">Data Mining</span>
-                <span class="interest-tag">Unsupervised Learning</span>
-                <span class="interest-tag">Scientific Computing</span>
-            </div>
-        </div>
-    </div>
-</section>
-<div class="divider"></div>
-    <!-- ❌ Template rendering failed for 'section': 'grid_cols' is undefined -->
-        <!-- <div class="divider"></div> -->
-    <section class="content-section">
-    <div class="container">
-        <header class="section-header">
-            <h2>Recent Publications</h2>
-        </header>
-        <div class="list-container">
-<article class="card publication-card reveal-on-scroll">
-    <h3 class="card-title">Revealing Subject-Specific Temporal Patterns from Longitudinal Data</h3>
-    <p class="card-meta pub-authors"><b>Christos Chatzis</b>, David Horner, Rasmus Bro, Ann-Marie Malby Schoos, Morten Arendt Rasmussen, Evrim Acar</p>
-    <p class="card-meta pub-venue">bioRxiv, 2026</p>
-    <div class="card-links">
-        <a href="https://doi.org/10.64898/2026.02.01.703114" class="pub-link">Paper</a>
-        <button class="cite-button" onclick="copyBibtex(this)" data-bibtex="@article{Chatzis2026.02.01.703114,
- author = {Chatzis, Christos and Horner, David and Bro, Rasmus and Schoos, Ann-Marie Malby and Rasmussen, Morten Arendt and Acar, Evrim},
- doi = {10.64898/2026.02.01.703114},
- journal = {bioRxiv},
- publisher = {Cold Spring Harbor Laboratory},
- title = {Revealing Subject-Specific Temporal Patterns from Longitudinal Data},
- url = {https://www.biorxiv.org/content/early/2026/02/03/2026.02.01.703114},
- year = {2026}
-}">
-            <i class="fas fa-quote-left"></i> Cite
-        </button>
-    </div>
-</article><article class="card publication-card reveal-on-scroll">
-    <h3 class="card-title">tPARAFAC2: tracking evolving patterns in (incomplete) temporal data</h3>
-    <p class="card-meta pub-authors"><b>Christos Chatzis</b>, Carla Schenker, Max Pfeffer, Evrim Acar</p>
-    <p class="card-meta pub-venue">Data Mining and Knowledge Discovery, 2025</p>
-    <div class="card-links">
-        <a href="https://doi.org/10.1007/s10618-025-01122-6" class="pub-link">Paper</a>
-        <button class="cite-button" onclick="copyBibtex(this)" data-bibtex="@article{Chatzis2025,
- author = {Christos Chatzis and Carla Schenker and Max Pfeffer and Evrim Acar},
- doi = {10.1007/s10618-025-01122-6},
- journal = {Data Mining and Knowledge Discovery},
- number = {6},
- title = {tPARAFAC2: tracking evolving patterns in (incomplete) temporal data},
- volume = {39},
- year = {2025}
-}">
-            <i class="fas fa-quote-left"></i> Cite
-        </button>
-    </div>
-</article><article class="card publication-card reveal-on-scroll">
-    <h3 class="card-title">dCMF: Learning interpretable evolving patterns from temporal multiway data</h3>
-    <p class="card-meta pub-authors"><b>Christos Chatzis</b>, Carla Schenker, Jérémy E. Cohen, Evrim Acar</p>
-    <p class="card-meta pub-venue">arXiv preprints, 2025</p>
-    <div class="card-links">
-        <a href="https://arxiv.org/abs/2502.19367" class="pub-link">Paper</a>
-        <button class="cite-button" onclick="copyBibtex(this)" data-bibtex="@inproceedings{chatzis2025dcmflearninginterpretableevolving,
- archiveprefix = {arXiv},
- author = {Christos Chatzis and Carla Schenker and Jérémy E. Cohen and Evrim Acar},
- booktitle = {arXiv preprints},
- eprint = {2502.19367},
- primaryclass = {cs.LG},
- title = {dCMF: Learning interpretable evolving patterns from temporal multiway data},
- url = {https://arxiv.org/abs/2502.19367},
- year = {2025}
-}">
-            <i class="fas fa-quote-left"></i> Cite
-        </button>
-    </div>
-</article>        </div>
-        <div class="section-footer">
-            <a href="publications.html" class="view-all-link">View all publications →</a>
-        </div>
-    </div>
-</section>
-        <div class="divider"></div>
-    <section class="content-section">
-    <div class="container">
-        <header class="section-header">
-            <h2>Recent News</h2>
-        </header>
-        <div class="timeline-container">
-<article class="news-item reveal-on-scroll">
-    <time class="news-date">February 2026</time>
-    <div class="news-content">
-        <p>A new preprint is available <em>Revealing Subject-Specific Temporal Patterns from Longitudinal Data</em>.</p>
-    <div class="news-links">
-<a href="https://www.biorxiv.org/content/10.64898/2026.02.01.703114v1" target="_blank" rel="noopener" class="news-link">Paper</a>    </div>
-    </div>
-</article><article class="news-item reveal-on-scroll">
-    <time class="news-date">December 2025</time>
-    <div class="news-content">
-        <p>I will be lecturing <a href="https://student.oslomet.no/studier/-/studieinfo/emne/ACIT4530/2025/H%C3%98ST">ACIT4530: Data Mining at Scale: Algorithms and Systems</a> at OsloMet this Spring 2026 semester. Excited to get started!</p>
-    <div class="news-links">
-    </div>
-    </div>
-</article><article class="news-item reveal-on-scroll">
-    <time class="news-date">November 2025</time>
-    <div class="news-content">
-        <p>A new preprint is available <em>Extracting host-specific developmental signatures from longitudinal microbiome data</em>.</p>
-    <div class="news-links">
-<a href="https://www.biorxiv.org/content/10.1101/2025.11.22.689760v1" target="_blank" rel="noopener" class="news-link">Paper</a>    </div>
-    </div>
-</article>        </div>
-        <div class="section-footer">
-            <a href="news.html" class="view-all-link">View all news →</a>
-        </div>
-    </div>
-</section>
 
-    </main>
-    
-<footer class="site-footer-main">
-    <p>© 2026 Christos Chatzis. All rights reserved.</p>
-</footer>    
-    <script src="https://cchatzis.github.io/static/theme.js"></script>
+
+<!-- Navigation -->
+	<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+	  <div class="container">
+		<div class="navbar-header">
+		  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		  <ul class="nav navbar-nav">
+				  <li><a href="index.html">Home</a></li>
+				  <li><a href="#education">Education</a></li>
+				  <li><a href="#publications">Publications</a></li>
+				  <li><a href="#talks">Talks</a></li>
+				  <li><a href="#service">Academic Service</a></li>
+				  <li><a href="#news">News</a></li>
+		  </ul>
+		</div>
+	  </div>
+	</nav>
+
+  <!-- Page Content -->
+    <div class="container">
+
+        <div class="row" style="margin-top: 24px;">
+
+            <!-- Main Column -->
+            <div class="col-md-8">
+
+                <div class="section-box" style="text-align:justify;">
+                <h2 id="about">About Me</h2>
+                  <p>I am currently a PhD student at Simula Metropolitan Center for Digital Engineering (SimulaMet) studying matrix and tensor factorizations, specifically for temporal data.</p>
+
+                  <p>My background is on <b>computer science</b>, specializing in <b>data mining</b> and <b>scientific computing</b>. I am especially intrigued by <b>unsupervised machine learning</b> due to its capacity to discover patterns that are not predefined and relationships we did not even know to look for.</p>
+                </div>
+
+                <!-- Education -->
+                <div class="section-box">
+                    <h2 id="education">Education</h2>
+                    <div class="service-entry">
+                        <span class="service-date">2022 – present</span>
+                        <span>Ph.D. in Engineering Science, Simula Metropolitan Center for Digital Engineering</span>
+                    </div>
+                    <div class="service-entry">
+                        <span class="service-date">2020 – 2022</span>
+                        <span>M.Sc. in Computer Science, National and Kapodistrian University of Athens</span>
+                    </div>
+                    <div class="service-entry">
+                        <span class="service-date">2016 – 2020</span>
+                        <span>B.Sc. in Informatics &amp; Telecommunications, National and Kapodistrian University of Athens</span>
+                    </div>
+                </div>
+
+                <!-- Publications -->
+                <div class="section-box">
+                    <h2 id="publications">Publications</h2>
+                    <div class="pub-entry">
+  <strong><a href="https://doi.org/10.64898/2026.02.01.703114" target="_blank">Revealing Subject-Specific Temporal Patterns from Longitudinal Data</a></strong><br>
+  Christos Chatzis, David Horner, Rasmus Bro, Ann-Marie Malby Schoos, Morten Arendt Rasmussen, Evrim Acar<br>
+  <em>bioRxiv</em>, 2026
+  <div style="margin-top: 8px;"><details class="pub-cite"><summary class="pub-btn">Cite</summary><pre>@article{Chatzis2026.02.01.703114,
+  title = {Revealing Subject-Specific Temporal Patterns from Longitudinal Data},
+  author = {Chatzis, Christos and Horner, David and Bro, Rasmus and Schoos, Ann-Marie Malby and Rasmussen, Morten Arendt and Acar, Evrim},
+  journal = {bioRxiv},
+  year = {2026},
+  url = {https://www.biorxiv.org/content/early/2026/02/03/2026.02.01.703114},
+  publisher = {Cold Spring Harbor Laboratory},
+  doi = {10.64898/2026.02.01.703114},
+  code = {https://github.com/cchatzis/Revealing-Subject-specific-Temporal-Patterns-from-Longitudinal-Data},
+}</pre></details><a class="pub-btn" href="https://github.com/cchatzis/Revealing-Subject-specific-Temporal-Patterns-from-Longitudinal-Data" target="_blank">Code</a></div>
+</div>
+<div class="pub-entry">
+  <strong><a href="https://doi.org/10.1101/2025.11.22.689760" target="_blank">Extracting host-specific developmental signatures from longitudinal microbiome data</a></strong><br>
+  Balazs Erdos, Christos Chatzis, Jonathan Thorsen, Jakob Stokholm, Age K. Smilde, Morten A. Rasmussen, Evrim Acar<br>
+  <em>bioRxiv</em>, 2025
+  <div style="margin-top: 8px;"><details class="pub-cite"><summary class="pub-btn">Cite</summary><pre>@article{erdos2025extracting,
+  author = {Erdos, Balazs and Chatzis, Christos and Thorsen, Jonathan and Stokholm, Jakob and Smilde, Age K. and Rasmussen, Morten A. and Acar, Evrim},
+  title = {Extracting host-specific developmental signatures from longitudinal microbiome data},
+  id = {2025.11.22.689760},
+  year = {2025},
+  doi = {10.1101/2025.11.22.689760},
+  publisher = {Cold Spring Harbor Laboratory},
+  url = {https://www.biorxiv.org/content/early/2025/11/25/2025.11.22.689760},
+  eprint = {https://www.biorxiv.org/content/early/2025/11/25/2025.11.22.689760.full.pdf},
+  journal = {bioRxiv},
+  code = {https://github.com/blzserdos/parafac2_microbiome},
+}</pre></details><a class="pub-btn" href="https://github.com/blzserdos/parafac2_microbiome" target="_blank">Code</a></div>
+</div>
+<div class="pub-entry">
+  <strong><a href="https://doi.org/10.23919/EUSIPCO63237.2025.11226087" target="_blank">dCMF: Learning Interpretable Evolving Patterns from Temporal Multiway Data</a></strong><br>
+  Christos Chatzis, Carla Schenker, Jérémy E. Cohen, Evrim Acar<br>
+  <em>2025 33rd European Signal Processing Conference (EUSIPCO)</em>, 2025
+  <div style="margin-top: 8px;"><details class="pub-cite"><summary class="pub-btn">Cite</summary><pre>@inproceedings{11226087,
+  author = {Chatzis, Christos and Schenker, Carla and Cohen, Jérémy E. and Acar, Evrim},
+  booktitle = {2025 33rd European Signal Processing Conference (EUSIPCO)},
+  title = {dCMF: Learning Interpretable Evolving Patterns from Temporal Multiway Data},
+  year = {2025},
+  volume = {},
+  number = {},
+  pages = {2122-2126},
+  doi = {10.23919/EUSIPCO63237.2025.11226087},
+  code = {https://github.com/cchatzis/temp-dcmf-repo},
+}</pre></details><a class="pub-btn" href="https://github.com/cchatzis/temp-dcmf-repo" target="_blank">Code</a></div>
+</div>
+<div id="pub-extra" style="display:none">
+<div class="pub-entry">
+  <strong><a href="https://doi.org/10.1007/s10618-025-01122-6" target="_blank">tPARAFAC2: tracking evolving patterns in (incomplete) temporal data</a></strong><br>
+  Christos Chatzis, Carla Schenker, Max Pfeffer, Evrim Acar<br>
+  <em>Data Mining and Knowledge Discovery</em>, 2025
+  <div style="margin-top: 8px;"><details class="pub-cite"><summary class="pub-btn">Cite</summary><pre>@article{Chatzis2025,
+  author = {Christos Chatzis and Carla Schenker and Max Pfeffer and Evrim Acar},
+  title = {tPARAFAC2: tracking evolving patterns in (incomplete) temporal data},
+  journal = {Data Mining and Knowledge Discovery},
+  year = {2025},
+  volume = {39},
+  number = {6},
+  doi = {10.1007/s10618-025-01122-6},
+  code = {https://github.com/cchatzis/tPARAFAC2-latest},
+}</pre></details><a class="pub-btn" href="https://github.com/cchatzis/tPARAFAC2-latest" target="_blank">Code</a></div>
+</div>
+<div class="pub-entry">
+  <strong><a href="https://doi.org/10.1109/MLSP55844.2023.10285943" target="_blank">A Time-Aware Tensor Decomposition for Tracking Evolving Patterns</a></strong><br>
+  Christos Chatzis, Max Pfeffer, Pedro Lind, Evrim Acar<br>
+  <em>2023 IEEE 33rd International Workshop on Machine Learning for Signal Processing (MLSP)</em>, 2023
+  <div style="margin-top: 8px;"><details class="pub-cite"><summary class="pub-btn">Cite</summary><pre>@inproceedings{10285943,
+  author = {Chatzis, Christos and Pfeffer, Max and Lind, Pedro and Acar, Evrim},
+  booktitle = {2023 IEEE 33rd International Workshop on Machine Learning for Signal Processing (MLSP)},
+  title = {A Time-Aware Tensor Decomposition for Tracking Evolving Patterns},
+  year = {2023},
+  volume = {},
+  number = {},
+  pages = {1-6},
+  keywords = {Tensors;Frequency modulation;Conferences;Machine learning;Signal processing;Noise measurement;Matrix decomposition;Tensor decomposition;PARAFAC2;Time-evolving data},
+  doi = {10.1109/MLSP55844.2023.10285943},
+}</pre></details></div>
+</div>
+</div>
+<div style="text-align:center; margin-top:8px;"><button style="background:none; border:none; cursor:pointer; color:#555; font-family:Ubuntu,sans-serif; font-size:13px;" onclick="var e=document.getElementById('pub-extra'),arr=this.querySelector('.pub-arrow'),open=e.style.display==='none';e.style.display=open?'':'none';arr.classList.toggle('open',open);this.childNodes[0].textContent=open?'Show less ':'Show more ';">Show more <span class="pub-arrow">&#9660;</span></button></div>
+                </div>
+
+                <!-- Talks -->
+                <div class="section-box">
+                    <h2 id="talks">Talks</h2>
+                    <div class="pub-entry">
+  <div style="margin-bottom:4px;"><span style="font-size:11px; color:#fff; background:#7a9bb5; border-radius:3px; padding:1px 7px; margin-right:8px;">Invited Talk</span><span style="color:#888; font-size:0.9em;">June 2025</span></div>
+  <strong>Uncovering evolving patterns in temporal data with tensor decompositions</strong><br>
+  <em>TRICAP (Three-way Methods in Chemistry and Psychology) 2025, Ålesund, Norway</em>
+  <div style=margin-top:6px;><button class="pub-btn" onclick="var d=document.getElementById('talk-desc-0');d.style.display=d.style.display==='none'?'':'none';">Details</button></div>
+  <div id="talk-desc-0" style="display:none; margin-top:8px; font-size:0.92em; color:#444;">In this talk, we discuss why existing works might be unsuitable for the task of analyzing time-evolving data and introduce two time-aware methods: t(emporal)PARAFAC and d(ynamical)CMF. With extensive synthetic experiments we compare these methods with the state-of-the-art for the task of uncovering evolving patterns in terms of accuracy, while also highlighting the benefits and limitations with respect to the three essential requirements of analyzing temporal data: (a) time-awareness, (b) structural flexibility, and (c) uniqueness. This is joint work with Carla Schenker, Max Pfeffer, Pedro Lind, Jérémy E. Cohen and Evrim Acar.</div>
+</div>
+<div class="pub-entry">
+  <div style="margin-bottom:4px;"><span style="font-size:11px; color:#fff; background:#7a9bb5; border-radius:3px; padding:1px 7px; margin-right:8px;">Contributed Talk</span><span style="color:#888; font-size:0.9em;">May 2025</span></div>
+  <strong>dCMF: Learning interpretable evolving patterns from temporal multiway data</strong><br>
+  <em>Hidden structures in dynamical systems, optimization, and machine learning, Gran Sasso Science Institute</em>
+  <div style=margin-top:6px;><button class="pub-btn" onclick="var d=document.getElementById('talk-desc-1');d.style.display=d.style.display==='none'?'':'none';">Details</button><a class="pub-btn" href="static/talks/abstract.pdf" target="_blank">Abstract</a><a class="pub-btn" href="https://trimester2025.math.gssi.it/workshop4/" target="_blank">Website</a></div>
+  <div id="talk-desc-1" style="display:none; margin-top:8px; font-size:0.92em; color:#444;">In this work, we bridge the gap between tensor factorizations and dynamical modeling and propose d(ynamical)CMF. dCMF constrains the temporal evolution of the latent factors to adhere to a specific LDS structure, thus taking into account the order of the observations. We explore how the proposed method is related to CP, PARAFAC2 and t(emporal)PARAFAC2. We highlight also the fact that if an estimate of the transition matrix is known a-priori, the framework allows for promoting this specific structure on the evolving factors. This is joint work with Carla Schenker, Jérémy E. Cohen and Evrim Acar.</div>
+</div>
+<div class="pub-entry">
+  <div style="margin-bottom:4px;"><span style="font-size:11px; color:#fff; background:#7a9bb5; border-radius:3px; padding:1px 7px; margin-right:8px;">Invited Talk</span><span style="color:#888; font-size:0.9em;">March 2024</span></div>
+  <strong>A Time-aware tensor decomposition for concept evolution</strong><br>
+  <em>94th Annual meeting of the International Association of Applied Mathematics and Mechanics (GAMM 2024)</em>
+  <div style=margin-top:6px;><button class="pub-btn" onclick="var d=document.getElementById('talk-desc-2');d.style.display=d.style.display==='none'?'':'none';">Details</button></div>
+  <div id="talk-desc-2" style="display:none; margin-top:8px; font-size:0.92em; color:#444;">In this talk, we introduce the temporal PARAFAC2 (tPARAFAC2) model, a PARAFAC2-based tensor factorization with temporal regularization to compute a time-aware factorization of the input with the goal of extracting gradually evolving patterns, which is essential for understanding the data’s continuous development through the underlying temporal dynamics. We use an Alternating Optimization (AO) - Alternating Direction Method of Multipliers (ADMM)-based algorithm to fit the model and study different algorithmic approaches to handle missing data when fitting the model. Using numerical experiments on simulated and real data, we demonstrate the effectiveness of tPARAFAC2 model in terms of recovering the underlying (evolving) patterns accurately in various challenging cases, in particular, in the presence of missing entries. This is joint work with Max Pfeffer, Pedro Lind and Evrim Acar.</div>
+</div>
+                </div>
+
+                <!-- Academic Service -->
+                <div class="section-box">
+                    <h2 id="service">Academic Service</h2>
+                    <div class="service-subsection"><p><b>Reviewing</b></p><ul><li>ICML 2026 workshop: Connecting Low-rank Representations in AI (CoLorAI'26)</li></ul></div>
+<div class="service-subsection"><p><b>Teaching</b></p><div class="service-entry"><span class="service-date">Spring 2026</span><span>Data Mining at Scale: Algorithms and Systems (Lecturer), OsloMet</span></div><div class="service-entry"><span class="service-date">Spring 2021</span><span>Data mining techniques (Teaching assistant), National and Kapodistrian University of Athens</span></div><div class="service-entry"><span class="service-date">Winter 2021</span><span>Numerical analysis (Teaching assistant), National and Kapodistrian University of Athens</span></div><div class="service-entry"><span class="service-date">Winter 2020</span><span>Numerical analysis (Teaching assistant), National and Kapodistrian University of Athens</span></div></div>
+                </div>
+
+                <!-- News -->
+                <div class="section-box">
+                    <h2 id="news">News</h2>
+                    <ul style="padding-left: 18px;">
+<li style="margin-bottom: 8px;"><strong>February 2026</strong> — A new preprint is available <em>Revealing Subject-Specific Temporal Patterns from Longitudinal Data</em>.<a href="https://www.biorxiv.org/content/10.64898/2026.02.01.703114v1" target="_blank" style="font-size:12px; margin-left:6px;">[Paper]</a></li>
+<li style="margin-bottom: 8px;"><strong>December 2025</strong> — I will be lecturing <a href="https://student.oslomet.no/studier/-/studieinfo/emne/ACIT4530/2025/H%C3%98ST" target="_blank">ACIT4530: Data Mining at Scale: Algorithms and Systems</a> at OsloMet this Spring 2026 semester. Excited to get started!</li>
+<li style="margin-bottom: 8px;"><strong>November 2025</strong> — A new preprint is available <em>Extracting host-specific developmental signatures from longitudinal microbiome data</em>.<a href="https://www.biorxiv.org/content/10.1101/2025.11.22.689760v1" target="_blank" style="font-size:12px; margin-left:6px;">[Paper]</a></li>
+<li style="margin-bottom: 8px;"><strong>September 2025</strong> — Our work <em>tPARAFAC2: Tracking evolving patterns in (incomplete) temporal data</em> is now published!<a href="https://link.springer.com/article/10.1007/s10618-025-01122-6" target="_blank" style="font-size:12px; margin-left:6px;">[Paper]</a></li>
+<li style="margin-bottom: 8px;"><strong>September 2025</strong> — Our work <em>dCMF: Learning interpretable evolving patterns from temporal multiway data</em> is now published!<a href="https://eusipco2025.org/wp-content/uploads/pdfs/0002122.pdf" target="_blank" style="font-size:12px; margin-left:6px;">[Paper]</a></li>
+</ul>
+<div id="news-extra" style="display:none"><ul style="padding-left: 18px;">
+<li style="margin-bottom: 8px;"><strong>June 2025</strong> — I presented at my talk <em>Uncovering evolving patterns in temporal data with tensor decompositions</em> at <em>TRICAP (Three-way Methods in Chemistry and Psychology) 2025</em> workshop at Ålesund, Norway.</li>
+<li style="margin-bottom: 8px;"><strong>May 2025</strong> — I presented my talk <em>dCMF: Learning interpretable evolving patterns from temporal multiway data</em> at <em>Hidden structures in dynamical systems, optimization, and machine learning</em> workshop at Gran Sasso Science Institute. Exciting!<a href="https://trimester2025.math.gssi.it/workshop4/" target="_blank" style="font-size:12px; margin-left:4px;">[Website]</a></li>
+<li style="margin-bottom: 8px;"><strong>February 2025</strong> — A new preprint is available: <em>dCMF: Learning interpretable evolving patterns from temporal multiway data</em>. To appear in EUSIPCO 2025.<a href="https://arxiv.org/abs/2502.19367" target="_blank" style="font-size:12px; margin-left:6px;">[Paper]</a><a href="https://github.com/cchatzis/temp-dcmf-repo" target="_blank" style="font-size:12px; margin-left:4px;">[Code]</a></li>
+<li style="margin-bottom: 8px;"><strong>July 2024</strong> — A new preprint is available: <em>tPARAFAC2: Tracking evolving patterns in (incomplete) temporal data</em>. To appear in Data Mining and Knowledge Discovery.<a href="https://arxiv.org/abs/2407.01356" target="_blank" style="font-size:12px; margin-left:6px;">[Paper]</a><a href="https://github.com/cchatzis/tPARAFAC2-latest" target="_blank" style="font-size:12px; margin-left:4px;">[Code]</a></li>
+<li style="margin-bottom: 8px;"><strong>January 2024</strong> — I presented my poster <em>A time-aware tensor decomposition for concept evolution</em> at Geilo Winter School in (you guessed it) Geilo, Norway.</li>
+<li style="margin-bottom: 8px;"><strong>October 2023</strong> — Our work <em>A Time-Aware Tensor Decomposition for Tracking Evolving Patterns</em> is now published.<a href="https://ieeexplore.ieee.org/document/10285943" target="_blank" style="font-size:12px; margin-left:6px;">[Paper]</a></li>
+</ul></div>
+<div style="text-align:center; margin-top:4px;"><button style="background:none; border:none; cursor:pointer; color:#555; font-family:Ubuntu,sans-serif; font-size:13px;" onclick="var e=document.getElementById('news-extra'),arr=this.querySelector('.pub-arrow'),open=e.style.display==='none';e.style.display=open?'':'none';arr.classList.toggle('open',open);this.childNodes[0].textContent=open?'Show less ':'Show more ';">Show more <span class="pub-arrow">&#9660;</span></button></div>
+                </div>
+
+            </div><!-- end main col-md-8 -->
+
+            <!-- Sidebar -->
+            <div class="col-md-4">
+            <div class="section-box" style="text-align: center;">
+                <img src="img/prof2.jpg" alt="Christos Chatzis" style="width: 185px; height: 185px; object-fit: cover; border-radius: 50%; border: 3px solid #dde3ea; margin-bottom: 16px;">
+                <div style="font-family: 'Oswald', sans-serif; font-size: 30px; margin-bottom: 12px;"><b>Christos Chatzis</b></div>
+                <div style="text-align: left; font-size: 1em;">
+                  <p style="margin-bottom: 4px;"><b>christos at simula.no</b></p>
+                  <p style="margin-bottom: 16px;">Data Science and Knowledge Discovery dept.<br>
+                  SimulaMet<br>
+                  Stensberggata 27<br>
+                  Oslo, Norway</p>
+                  <dd><a href="https://scholar.google.com/citations?user=eE-1KN0AAAAJ&hl=en"><i class="fa fa-graduation-cap" aria-hidden="true" style="width: 18px; text-align: center; margin-right: 8px;"></i>Google Scholar</a></dd>
+                  <dd><a href="#"><i class="fa fa-github" aria-hidden="true" style="width: 18px; text-align: center; margin-right: 8px;"></i>GitHub</a></dd>
+                  <dd><a href="https://www.linkedin.com/in/cchatzis/"><i class="fa fa-linkedin" aria-hidden="true" style="width: 18px; text-align: center; margin-right: 8px;"></i>LinkedIn</a></dd>
+                </div>
+            </div><!-- end section-box -->
+            </div><!-- end sidebar col-md-4 -->
+
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Other people may like it too! -->
+    <a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a>
+
 </body>
+
 </html>

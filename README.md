@@ -1,1 +1,1 @@
-Created with Zenfolio (https://github.com/JeanKossaifi/zenfolio).
+Based on https://github.com/mavroudisv/plain-academic.
